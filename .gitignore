@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/aspnetcore,visualstudio
-# Edit at https://www.toptal.com/developers/gitignore?templates=aspnetcore,visualstudio
+# Created by https://www.toptal.com/developers/gitignore/api/aspnetcore,visualstudio,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=aspnetcore,visualstudio,visualstudiocode
 
 ### ASPNETCore ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -272,6 +272,18 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
 ### VisualStudio ###
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
@@ -482,4 +494,4 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# End of https://www.toptal.com/developers/gitignore/api/aspnetcore,visualstudio
+# End of https://www.toptal.com/developers/gitignore/api/aspnetcore,visualstudio,visualstudiocode
