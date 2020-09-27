@@ -1,3 +1,4 @@
+using EfCoreCourse.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace EfCoreCourse.Data
@@ -13,7 +14,7 @@ namespace EfCoreCourse.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
         }
     }
 }
