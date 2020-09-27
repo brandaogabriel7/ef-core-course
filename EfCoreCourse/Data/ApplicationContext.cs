@@ -1,5 +1,3 @@
-using EfCoreCourse.Data.Extensions;
-using EfCoreCourse.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace EfCoreCourse.Data
