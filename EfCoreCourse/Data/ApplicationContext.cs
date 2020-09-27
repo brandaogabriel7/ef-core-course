@@ -15,9 +15,7 @@ namespace EfCoreCourse.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.CreateProdutoModel();
-            modelBuilder.CreatePedidoModel();
-            modelBuilder.CreatePedidoItemModel();
+
         }
     }
 }
