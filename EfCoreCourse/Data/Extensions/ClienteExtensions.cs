@@ -5,20 +5,6 @@ namespace EfCoreCourse.Data.Extensions
 {
     public static class ModelBuilderExtensions
     {
-        public static void CreateClienteModel(this ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Cliente>((p) =>
-            {
-                p.ToTable("Clientes");
-                p.HasKey(p => p.Id);
-                p.Property(p => p.Nome).HasColumnType("VARCHAR(80)").IsRequired();
-                p.Property(p => p.Telefone).HasColumnType("CHAR(11)");
-                p.Property(p => p.CEP).HasColumnType("CHAR(8)").IsRequired();
-                p.Property(p => p.Estado).HasColumnType("CHAR(2)").IsRequired();
-                p.Property(p => p.Cidade).HasMaxLength(60).IsRequired();
-            });
-        }
-
         public static void CreateProdutoModel(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Produto>((p) =>
