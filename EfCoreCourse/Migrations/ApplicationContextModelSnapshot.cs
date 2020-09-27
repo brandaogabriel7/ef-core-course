@@ -70,7 +70,7 @@ namespace EfCoreCourse.Migrations
                     b.Property<DateTime>("IniciadoEm")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValueSql("GETDATE()");
+                        .HasDefaultValueSql("NOW()");
 
                     b.Property<string>("Observacao")
                         .HasColumnType("VARCHAR(512)");

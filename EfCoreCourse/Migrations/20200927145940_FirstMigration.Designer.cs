@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EfCoreCourse.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20200927144614_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20200927145940_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,7 +72,7 @@ namespace EfCoreCourse.Migrations
                     b.Property<DateTime>("IniciadoEm")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValueSql("GETDATE()");
+                        .HasDefaultValueSql("NOW()");
 
                     b.Property<string>("Observacao")
                         .HasColumnType("VARCHAR(512)");

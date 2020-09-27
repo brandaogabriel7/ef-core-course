@@ -13,7 +13,7 @@ namespace EfCoreCourse.Data.Configurations
         {
             builder.ToTable(TABLE_NAME);
             builder.HasKey(p => p.Id);
-            builder.Property(p => p.IniciadoEm).HasDefaultValueSql($"{SqlConstants.GETDATE}()").ValueGeneratedOnAdd();
+            builder.Property(p => p.IniciadoEm).HasDefaultValueSql($"{SqlConstants.NOW}()").ValueGeneratedOnAdd();
             builder.Property(p => p.Status).HasConversion<string>();
             builder.Property(p => p.TipoFrete).HasConversion<int>();
             builder.Property(p => p.Observacao).HasColumnType($"{SqlConstants.VARCHAR}({OBSERVACAO_MAX_SIZE})");

@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace EfCoreCourse.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,7 +49,7 @@ namespace EfCoreCourse.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ClienteId = table.Column<int>(nullable: false),
-                    IniciadoEm = table.Column<DateTime>(nullable: false, defaultValueSql: "GETDATE()"),
+                    IniciadoEm = table.Column<DateTime>(nullable: false, defaultValueSql: "NOW()"),
                     FinalizadoEm = table.Column<DateTime>(nullable: false),
                     TipoFrete = table.Column<int>(nullable: false),
                     Status = table.Column<string>(nullable: false),
