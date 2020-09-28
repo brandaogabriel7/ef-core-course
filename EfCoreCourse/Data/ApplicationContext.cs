@@ -5,8 +5,7 @@ namespace EfCoreCourse.Data
 {
     public class ApplicationContext : DbContext
     {
-        private const string ConnectionString = "Host=localhost;Port:5432;Pooling=true;Database=ef_core_course;User ID=admin;Password=admin";
-
+        private const string ConnectionString = "Host=localhost;Port=5432;Pooling=true;Database=ef_core_course;User ID=admin;Password=admin";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql(ConnectionString);
