@@ -12,8 +12,56 @@ namespace EfCoreCourse
         static void Main(string[] args)
         {
             // InserirDados();
-            // InserirDadosEmMassa();
-            ConsultarDados();
+            InserirDadosEmMassa();
+            // ConsultarDados();
+            // AtualizarDados();
+            // RemoverRegistros();
+        }
+
+        private static void RemoverRegistros() {
+            using var dbContext = new ApplicationContext();
+            // Instância conectada
+            // var cliente = dbContext.Clientes.Find(2);
+            // dbContext.Clientes.Remove(cliente);
+            // dbContext.Remove(cliente);
+            // dbContext.Entry(cliente).State = EntityState.Deleted;
+
+            //Instância desconectada
+            var cliente = new Cliente
+            {
+                Id = 3
+            };
+            // dbContext.Clientes.Remove(cliente);
+            // dbContext.Remove(cliente);
+            dbContext.Entry(cliente).State = EntityState.Deleted;
+
+            dbContext.SaveChanges();
+        }
+
+        private static void AtualizarDados() {
+            using var dbContext = new ApplicationContext();
+            // var cliente = dbContext.Clientes.Find(1);
+            // cliente.Nome = "Cliente diferente dnv";
+
+            var cliente = new Cliente
+            {
+                Id = 1,
+                Telefone = "3199999999"
+            };
+            dbContext.Attach(cliente);
+
+            var clienteDesconectado = new
+            {
+                Nome = "Cliente desconectado a",
+                Telefone = "1132658945"
+            };
+
+
+            dbContext.Entry(cliente).CurrentValues.SetValues(clienteDesconectado);
+
+            // Indica que todas as propriedades sofreram alterações. Quando comentado, o EF Core já sabe o que foi alterado porque a entidade é rastreada após o SELECT.
+            // dbContext.Clientes.Update(cliente);
+            dbContext.SaveChanges();
         }
 
         private static void ConsultarDados()
@@ -47,7 +95,7 @@ namespace EfCoreCourse
 
             var cliente = new Cliente
             {
-                Nome = "Eu mesmo",
+                Nome = "Eu mesmo 2",
                 CEP = "34685974",
                 Cidade = "Betim",
                 Estado = "MG",
