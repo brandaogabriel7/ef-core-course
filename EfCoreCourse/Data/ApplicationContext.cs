@@ -25,7 +25,7 @@ namespace EfCoreCourse.Data
                 .UseNpgsql(ConnectionString, p => p.EnableRetryOnFailure(
                     maxRetryCount: MAX_RETRY_COUNT,
                     maxRetryDelay: TimeSpan.FromSeconds(RETRY_DELAY_IN_SECONDS),
-                    errorCodesToAdd: null));
+                    errorCodesToAdd: null).MigrationsHistoryTable("curso_ef_core"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
